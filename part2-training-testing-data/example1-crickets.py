@@ -29,7 +29,7 @@ intercept = round(float(model.intercept_), 2)
 r_squared = model.score(xtrain, ytrain)
 
 # print out the linear equation and r^2 value
-print("Model's Linear Equation: y=",coef, "x+", intercept)
+print(f"Model's Linear Equation: y={coef}x+{intercept}")
 print("R Squared value:", r_squared)
 
 '''
@@ -37,7 +37,7 @@ print("R Squared value:", r_squared)
 '''
 
 # reshape the xtest data into a 2D array
-# xtest = xtest.reshape(-1,1)
+xtest = xtest.reshape(-1,1)
 # get the predicted y values for the xtest values - returns an array of the results
 predict = model.predict(xtest)
 # round the value in the np array to 2 decimal places
@@ -49,7 +49,7 @@ for index in range(len(xtest)):
     actual = ytest[index] # gets the actual y value from the ytest dataset
     predicted_y = predict[index] # gets the predicted y value from the predict variable
     x_coord = xtest[index] # gets the x value from the xtest dataset
-    print("x value:", float(x_coord[0]), "Predicted y value:", predicted_y, "Actual y value:", actual)
+    print(f"x value: {float(x_coord[0])} Predicted y value: {predicted_y} Actual y value: {actual}")
 
 '''
 **********CREATE A VISUAL OF THE RESULTS**********
